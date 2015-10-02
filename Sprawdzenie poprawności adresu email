@@ -1,0 +1,20 @@
+<form method="post">
+  Sprawdz poprawnosc adresu email: <input type="text" name="fname"><br>
+  <input type="submit" value="Submit">
+</form>
+
+<?php
+
+// przypisanie adresu e-mail do zmiennej
+$email = $_POST['fname'];
+
+// formuła prawidłowego adresu e-mail 
+$sprawdz = '/^[a-zA-Z0-9.\-_]+@[a-zA-Z0-9\-.]+\.[a-zA-Z]{2,4}$/';
+
+if(preg_match($sprawdz, $email))
+  echo 'Podano prawidłowy adres e-mail';
+else
+  echo 'Adres e-mail nieprawidłowy';
+   
+?>
+
